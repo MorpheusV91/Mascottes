@@ -59,18 +59,19 @@
         {% endfor %}
     </div>
     {% endblock %}
+
+    {% block footer %}
+    <footer class="d-flex justify-content-between flew-row container">
+        <p>Site créé par &copy;Morpheus - 2022</p>
+        <div>
+            <p>Consultez aussi:</p>
+            <nav class="nav justify-content-center">
+                <a class="nav-link" href="{{path('reglement')}}">Règlement du site</a>
+            </nav>
+        </div>
+    </footer>
+    {% endblock%}
 </body>
 
-{% block footer %}
-<footer class="d-flex justify-content-between flew-row container">
-    <p>Site créé par &copy;Morpheus - 2022</p>
-    <div>
-        <p>Consultez aussi:</p>
-        <nav class="nav justify-content-center">
-            <a class="nav-link" href="{{path('reglement')}}">Règlement du site</a>
-        </nav>
-    </div>
-</footer>
-{% endblock%}
 
 </html>
