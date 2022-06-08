@@ -1,0 +1,26 @@
+<div class="container">
+
+    <nav class="nav justify-content-center">
+        <a class="nav-link active" href="{{path('accueil')}}">Accueil</a>
+        <a class="nav-link" href="#">A faire</a>
+        <a class="nav-link" href="#">A faire</a>
+    </nav>
+
+    {% for error in app.flashes('errors') %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <strong>Erreur</strong> {{error}}
+        </div>
+    {% endfor %}
+
+    {% for success in app.flashes('success') %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <strong>Succès</strong> {{success}}
+        </div>
+    {% endfor %}
+</div>
