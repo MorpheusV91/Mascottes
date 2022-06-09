@@ -30,17 +30,17 @@ class Commande
     /**
      * @ORM\Column(type="boolean")
      */
-    private $est_Paye;
+    private $estPaye;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $adresse_Facturation;
+    private $adresseFacturation;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $adresse_livraison;
+    private $adresseLivraison;
 
     public function getId(): ?int
     {
@@ -73,36 +73,36 @@ class Commande
 
     public function isEstPaye(): ?bool
     {
-        return $this->est_Paye;
+        return $this->estPaye;
     }
 
-    public function setEstPaye(bool $est_Paye): self
+    public function setEstPaye(bool $estPaye): self
     {
-        $this->est_Paye = $est_Paye;
+        $this->estPaye = $estPaye;
 
         return $this;
     }
 
     public function getAdresseFacturation(): ?string
     {
-        return $this->adresse_Facturation;
+        return $this->adresseFacturation;
     }
 
-    public function setAdresseFacturation(string $adresse_Facturation): self
+    public function setAdresseFacturation(string $adresseFacturation): self
     {
-        $this->adresse_Facturation = $adresse_Facturation;
+        $this->adresseFacturation = $adresseFacturation;
 
         return $this;
     }
 
     public function getAdresseLivraison(): ?string
     {
-        return $this->adresse_livraison;
+        return $this->adresseLivraison;
     }
 
-    public function setAdresseLivraison(string $adresse_livraison): self
+    public function setAdresseLivraison(string $adresseLivraison): self
     {
-        $this->adresse_livraison = $adresse_livraison;
+        $this->adresseLivraison = $adresseLivraison;
 
         return $this;
     }

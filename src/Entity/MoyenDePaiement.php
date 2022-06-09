@@ -23,10 +23,9 @@ class MoyenDePaiement
     private $nom;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
-    private $date_Ajout;
-
+    private $dateAjout;
 
     public function getId(): ?int
     {
@@ -47,12 +46,12 @@ class MoyenDePaiement
 
     public function getDateAjout(): ?\DateTimeInterface
     {
-        return $this->date_Ajout;
+        return $this->dateAjout;
     }
 
-    public function setDateAjout(\DateTimeInterface $date_Ajout): self
+    public function setDateAjout(\DateTimeInterface $dateAjout): self
     {
-        $this->date_Ajout = $date_Ajout;
+        $this->dateAjout = $dateAjout;
 
         return $this;
     }

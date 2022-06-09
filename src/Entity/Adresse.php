@@ -25,22 +25,22 @@ class Adresse
     /**
      * @ORM\Column(type="text")
      */
-    private $complement_Adresse;
-
-    /**
-     * @ORM\Column(type="text")
-     */
     private $ville;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $code_Postale;
 
     /**
      * @ORM\Column(type="text")
      */
     private $pays;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $complementAdresse;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $codePostal;
 
     public function getId(): ?int
     {
@@ -59,17 +59,6 @@ class Adresse
         return $this;
     }
 
-    public function getComplementAdresse(): ?string
-    {
-        return $this->complement_Adresse;
-    }
-
-    public function setComplementAdresse(string $complement_Adresse): self
-    {
-        $this->complement_Adresse = $complement_Adresse;
-
-        return $this;
-    }
 
     public function getVille(): ?string
     {
@@ -83,17 +72,6 @@ class Adresse
         return $this;
     }
 
-    public function getCodePostale(): ?int
-    {
-        return $this->code_Postale;
-    }
-
-    public function setCodePostale(int $code_Postale): self
-    {
-        $this->code_Postale = $code_Postale;
-
-        return $this;
-    }
 
     public function getPays(): ?string
     {
@@ -103,6 +81,30 @@ class Adresse
     public function setPays(string $pays): self
     {
         $this->pays = $pays;
+
+        return $this;
+    }
+
+    public function getComplementAdresse(): ?string
+    {
+        return $this->complementAdresse;
+    }
+
+    public function setComplementAdresse(string $complementAdresse): self
+    {
+        $this->complementAdresse = $complementAdresse;
+
+        return $this;
+    }
+
+    public function getCodePostal(): ?string
+    {
+        return $this->codePostal;
+    }
+
+    public function setCodePostal(string $codePostal): self
+    {
+        $this->codePostal = $codePostal;
 
         return $this;
     }
