@@ -42,6 +42,24 @@ class Commande
      */
     private $adresseLivraison;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=MoyenDePaiement::class, inversedBy="commandes")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $moyenDePaiement;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="commandes")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $user;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Transporteur::class, inversedBy="commandes")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $transporteur;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -103,6 +121,42 @@ class Commande
     public function setAdresseLivraison(string $adresseLivraison): self
     {
         $this->adresseLivraison = $adresseLivraison;
+
+        return $this;
+    }
+
+    public function getMoyenDePaiement(): ?MoyenDePaiement
+    {
+        return $this->moyenDePaiement;
+    }
+
+    public function setMoyenDePaiement(?MoyenDePaiement $moyenDePaiement): self
+    {
+        $this->moyenDePaiement = $moyenDePaiement;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    public function getTransporteur(): ?Transporteur
+    {
+        return $this->transporteur;
+    }
+
+    public function setTransporteur(?Transporteur $transporteur): self
+    {
+        $this->transporteur = $transporteur;
 
         return $this;
     }
